@@ -15,19 +15,24 @@
 //     console.log(result)
 // });
 
-const readline = require("readline");
 
-const rl = readline.createInterface({
-	input: process.stdin,
-	output: process.stdout,
-});
 
-let numbers = 0;
-rl.on("line", line => {
-	numbers += +line;
-}).on("close", () => {
-	process.stdout.write(numbers.toString());
-});
+// const readline = require("readline");
+
+// const rl = readline.createInterface({
+// 	input: process.stdin,
+// 	output: process.stdout,
+// });
+
+// let numbers = 0;
+// rl.on("line", line => {
+// 	numbers += +line;
+// }).on("close", () => {
+// 	process.stdout.write(numbers.toString());
+// });
+
+
+
 
 //   const fs = require('fs');
 //   let str = fs.readFileSync('input.txt', 'utf8')
