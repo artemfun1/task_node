@@ -154,34 +154,73 @@
 // 	}
 // });
 
-const readline = require("readline");
+// const readline = require("readline");
 
-const rl = readline.createInterface({
-	input: process.stdin,
-	output: process.stdout,
-});
+// const rl = readline.createInterface({
+// 	input: process.stdin,
+// 	output: process.stdout,
+// });
 
-let directories = [];
+// let directories = [];
 
-rl.on("line", line => {
-	directories.push(line);
-});
+// rl.on("line", line => {
+// 	directories.push(line);
+// });
 
-rl.on("close", () => {
+// rl.on("close", () => {
 	
-	directories.sort(); 
-	let result = [];
+// 	directories.sort(); 
+// 	let result = [];
 
-	for (let directory of directories) {
-		let parts = directory.split("/");
+// 	for (let directory of directories) {
+// 		let parts = directory.split("/");
 
-		let level = parts.length - 1; 
+// 		let level = parts.length - 1; 
 
-		result.push("  ".repeat(level) + parts[parts.length - 1]); 
-	}
+// 		result.push("  ".repeat(level) + parts[parts.length - 1]); 
+// 	}
 
-	process.stdout.write(result.join("n")); 
-});
+// 	process.stdout.write(result.join("n")); 
+// });
 
 
 
+var maxProfit = function (prices) {
+
+  const finalArr=[]
+  
+  
+  
+  for(let i=0;i<prices.length;i++){
+  
+    for(let k=i+1;k<prices.length;k++){
+    if (prices[i]<prices[k]){
+    
+     finalArr.push((prices[k]-prices[i]))
+    }
+
+  }
+  
+  }
+  
+  if(finalArr.length===0){
+      return 0
+  }
+  
+  return finalArr.sort((a,b)=>a-b)[finalArr.length-1]
+      
+  };
+console.log(maxProfit([7, 1, 5, 3, 6, 4]))
+  
+// Ожидаемый результат: 5
+console.log(maxProfit([7, 6, 4, 3, 1]))
+// Ожидаемый результат: 0
+
+console.log(maxProfit([3, 8, 1, 5, 9]))
+// Ожидаемый результат: 8
+
+console.log(maxProfit([2, 4, 2, 6, 1]))
+// Ожидаемый результат: 4
+
+console.log(maxProfit([5, 2, 9, 1, 5]))
+// Ожидаемый результат: 7
